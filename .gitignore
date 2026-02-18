@@ -1,0 +1,11 @@
+node_modules/
+dist/
+build/
+.env
+.DS_Store
+*.log
+coverage/
+backend/node_modules/
+frontend/node_modules/
+sms-enterprise/node_modules/
+backdate.sh
