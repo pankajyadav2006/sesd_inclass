@@ -4,7 +4,10 @@ import axios from 'axios';
 import { BookOpen, LogOut, Code, User as UserIcon, Settings, Plus, Search, Trash2, Edit2, Users, Layers, Activity, CheckCircle, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5005/api';
+let API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5005/api';
+if (!API_URL.endsWith('/api')) {
+  API_URL = API_URL.replace(/\/$/, '') + '/api';
+}
 
 const api = axios.create({ baseURL: API_URL });
 api.interceptors.request.use((config) => {
@@ -369,7 +372,7 @@ function App() {
       <div className="app-container">
         <nav className="navbar">
           <Link to="/" className="logo">
-            <BookOpen color="var(--primary)" size={32} /> LingoTrack
+            <BookOpen color="var(--primary)" size={32} /> Student Management
           </Link>
           <div className="nav-links">
             {user && (
