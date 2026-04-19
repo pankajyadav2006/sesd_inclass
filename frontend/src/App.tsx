@@ -4,7 +4,7 @@ import axios from 'axios';
 import { BookOpen, LogOut, Code, User as UserIcon, Settings, Plus, Search, Trash2, Edit2, Users, Layers, Activity, CheckCircle, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const API_URL = 'http://localhost:5005/api';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5005/api';
 
 const api = axios.create({ baseURL: API_URL });
 api.interceptors.request.use((config) => {
