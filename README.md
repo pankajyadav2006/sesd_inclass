@@ -1,34 +1,48 @@
 # Student Management System (SMS)
 
-A full-stack, futuristic Student Management System application.
+A professional, full-stack Student Management System built with a Clean Architecture approach.
 
 ## 🚀 Features
 
--   **Role-Based Access:** Support for Students, Instructors, and Admin with specific capabilities.
--   **Student Enrollments:** Students can browse course catalogs, enroll in courses, and drop them.
--   **Instructor Management:** Instructors can create, update, and manage their courses.
--   **Futuristic UI:** A visually stunning, modern, and highly responsive user interface designed for a premium user experience (glassmorphism, vibrant gradients).
--   **Clean Architecture Backend:** Structured around domain entities, services, and repositories for maintainability and scalability.
+- **Role-Based Access Control (RBAC):** Distinct dashboards for Students and Instructors.
+- **Course Management:** Instructors can create, update, and delete courses.
+- **Enrollment System:** Students can browse the catalog, enroll in courses, and drop them.
+- **Interactive UI:** High-performance React frontend with search, filtering, and real-time toast notifications.
+- **Futuristic Aesthetics:** Premium glassmorphism design using Vanilla CSS and Framer Motion.
+- **Clean Architecture:** Domain-driven design with Repository and Service patterns for a maintainable backend.
 
 ## 🛠️ Technology Stack
 
--   **Frontend:** React, TypeScript, React Router, Framer Motion, Vanilla CSS (Futuristic Design).
--   **Backend:** Node.js, Express, TypeScript, MongoDB, Mongoose.
--   **Authentication:** JWT (JSON Web Tokens) with bcryptjs.
+- **Frontend:** React, TypeScript, Vite, Framer Motion, Lucide Icons.
+- **Backend:** Node.js, Express, TypeScript, MongoDB, Mongoose.
+- **Security:** JWT Authentication, Bcrypt password hashing.
+
+## 📊 Architecture Diagrams
+
+- [Entity Relationship Diagram](./ErDiagram.md)
+- [Class Diagram](./classDiagram.md)
+- [Sequence Diagram](./sequenceDiagram.md)
+- [Use Case Diagram](./useCaseDiagram.md)
 
 ## 📦 Project Structure
 
--   `/backend`: Node.js/Express server providing the RESTful API.
--   `/frontend`: React/TypeScript client applications.
+- `/backend`: Node.js/Express REST API.
+- `/frontend`: React/TypeScript client app.
+- `/sms-enterprise`: (In-progress) Enterprise-grade backend with advanced scheduling and waitlists.
 
-## 📝 Setup Instructions
+## 📝 Local Setup
 
-1.  **Backend:**
-    -   Navigate to `backend` directory.
-    -   Run `npm install`.
-    -   Start the server with `npm run dev`.
+1. **Backend:**
+   - `cd backend`
+   - `npm install`
+   - `npm run dev` (Runs on port 5005)
 
-2.  **Frontend:**
-    -   Navigate to `frontend` directory.
-    -   Run `npm install`.
-    -   Start the development server with `npm run dev`.
+2. **Frontend:**
+   - `cd frontend`
+   - `npm install`
+   - `npm run dev` (Runs on port 5174)
+
+## 🌐 Deployment
+
+- **Backend:** Hosted on [Render](https://render.com).
+- **Frontend:** Hosted on [Vercel](https://vercel.com).
