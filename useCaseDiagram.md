@@ -1,30 +1,36 @@
+# Use Case Diagram
+
 ```mermaid
-usecaseDiagram
-title Student Management System (Use Cases)
+graph TD
+    S[Student]
+    I[Instructor]
+    A[Admin]
 
-actor Student as S
-actor Instructor as I
-actor Admin as A
+    subgraph "Auth & Profile"
+        S --- Reg(Register)
+        S --- Log(Login)
+        I --- Log
+        A --- Log
+    end
 
-S --> (Register)
-S --> (Login)
-S --> (Browse Courses)
-S --> (Enroll in Course)
-S --> (Drop Course)
-S --> (View Enrollments)
+    subgraph "Course Management"
+        S --- Browse(Browse Courses)
+        I --- Create(Create Course)
+        I --- Update(Update Course)
+        A --- ManageC(Manage Courses)
+        Create -.-> ManageC
+        Update -.-> ManageC
+    end
 
-I --> (Login)
-I --> (Create Course)
-I --> (Update Course)
-I --> (View Enrolled Students)
+    subgraph "Enrollment"
+        S --- Enroll(Enroll in Course)
+        S --- Drop(Drop Course)
+        S --- ViewE(View Enrollments)
+        I --- ViewS(View Enrolled Students)
+    end
 
-A --> (Login)
-A --> (Manage Users)
-A --> (Manage Courses)
-A --> (Assign Instructor)
-
-(Register) ..> (Login) : includes
-(Create Course) ..> (Manage Courses) : includes
-(Update Course) ..> (Manage Courses) : includes
+    subgraph "Administration"
+        A --- ManageU(Manage Users)
+        A --- Assign(Assign Instructor)
+    end
 ```
-
