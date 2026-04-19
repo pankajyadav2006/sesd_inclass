@@ -6,13 +6,13 @@ sequenceDiagram
 
     actor Student
     participant WebApp
-    participant API as HTTP API
-    participant AuthS as AuthService
-    participant EnrollS as EnrollmentService
-    participant UserRepo as UserRepository
-    participant CourseRepo
-    participant EnrollRepo as EnrollmentRepository
-    database DB
+    participant API as "HTTP API"
+    participant AuthS as "AuthService"
+    participant EnrollS as "EnrollmentService"
+    participant UserRepo as "UserRepository"
+    participant CourseRepo as "CourseRepository"
+    participant EnrollRepo as "EnrollmentRepository"
+    participant DB as "Database"
 
     Note over Student, DB: Login Flow
     Student->>WebApp: Enter credentials
