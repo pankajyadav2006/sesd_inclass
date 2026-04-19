@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - NODE_ENV=development
+      - PORT=8000
+      - MONGO_URI=mongodb://mongo:27017/sms_enterprise
+      - JWT_SECRET=enterprise_secret_99
+      - JWT_REFRESH_SECRET=enterprise_refresh_secret_101
+    depends_on:
+      - mongo
+    volumes:
+      - ./src:/app/src
+    command: npm run dev
+
+  mongo:
+    image: mongo:6-jammy
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
